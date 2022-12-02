@@ -16,7 +16,7 @@ The function header for `truly_dynamic_environment` is as follows:
 Where the players is a python dictionary containing information about the algorithms that will be playing against each other. Size is the board size, defaulted to 6x7. Visual is a boolean attribute that allows you to view the agents play eachother in realtime. ___note: the visual attribute will only work in jupyter notebook, not a regular python file.___ And board is the board to start from, setting this value to None will generate a fresh board for the agents to play on.
 #### Players dictionary
 The players dictionary should be formatted as follows __note that the first agent in the array should ALWAYS be playing 1 and the second should ALWAYS be playing -1 for proper functionality__:
-```
+```asm
 players = [
     {
         "algo":<player_1_agent_function>,
@@ -61,7 +61,7 @@ Where the function headers for my alpha beta cutoff and pure monte carlo look li
 
 #### Return types
 The dynamic environment function returns 3 objects. The first is a python dictionary formatted as follows:
-```
+```asm
 result = {
     "algo_info": {
         "<Algo_1_name>: {
