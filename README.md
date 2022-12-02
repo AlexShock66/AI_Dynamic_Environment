@@ -15,7 +15,7 @@ The function header for `truly_dynamic_environment` is as follows:
 `truly_dynamic_environment(players,size=(6,7),visual=False,board=None)`
 Where the players is a python dictionary containing information about the algorithms that will be playing against each other. Size is the board size, defaulted to 6x7. Visual is a boolean attribute that allows you to view the agents play eachother in realtime. ___note: the visual attribute will only work in jupyter notebook, not a regular python file.___ And board is the board to start from, setting this value to None will generate a fresh board for the agents to play on.
 #### Players dictionary
-The players dictionary should be formatted as follows:
+The players dictionary should be formatted as follows __note that the first agent in the array should ALWAYS be playing 1 and the second should ALWAYS be playing -1 for proper functionality__:
 ```asm
 players = [
     {
@@ -75,5 +75,27 @@ result = {
 The second is the final board where one of the agents won and the third is a list containing all board states that the agents got into.
 ### Replay
 This function simply allows the user to view the game played by the agents and accepts a list of all board states and optionally, a sleep value. The sleep value is how long the funciton waits before showing you the next move that an agent made and is defaulted to 1. __note that, similar to the visual attribute in the environment, this function is designed to only work in Jupyter Notebook__
+
+### Using it all together
+An example of how to use this environment can be seen below:
+```asm
+from environment import truly_dynamic_environment,replay
+playerz = [
+    {
+        "algo":random_player,
+        "player":1,
+        "args":{}
+    },
+    {
+        "algo":random_player,
+        "player":-1,
+        "args":{}
+    }
+]
+
+result,final_board,all_boards = truly_dynamic_environment(playerz,size=(6,7),visual=True)
+
+replay(all_boards)
+```
 
 
