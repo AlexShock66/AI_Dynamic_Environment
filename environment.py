@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from IPython.display import clear_output
 import json
+import time
 
 def visualize(board):
     plt.axes()
